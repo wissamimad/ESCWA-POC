@@ -1,0 +1,18 @@
+{
+	"name": "trigger1",
+	"properties": {
+		"description": "on blob update run the pipeline",
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/talenddestination/blobs/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/cedf16eb-771b-47c9-b218-5e08459b1a1d/resourceGroups/ESCWA/providers/Microsoft.Storage/storageAccounts/escwa",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}

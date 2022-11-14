@@ -1,0 +1,28 @@
+{
+	"name": "trigger2",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "escwa_pipeline",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"sourceFolder": "@substring(triggerBody().folderPath,add(indexof(triggerBody().folderPath,'/'),1),sub(length(triggerBody().folderPath),add(indexof(triggerBody().folderPath,'/'),1)))",
+					"sourceFile": "@triggerBody().fileName"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/talenddestination/blobs/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/cedf16eb-771b-47c9-b218-5e08459b1a1d/resourceGroups/ESCWA/providers/Microsoft.Storage/storageAccounts/escwa",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}

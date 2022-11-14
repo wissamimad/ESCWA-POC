@@ -1,0 +1,9 @@
+{
+	"name": "escwa-data-factory",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "c0cbd4c8-5d8f-4d43-89d8-d1433895c8d6",
+		"tenantId": "96d1021c-6dda-4c91-a49e-df8a7f11bdb0"
+	}
+}
