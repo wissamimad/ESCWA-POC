@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "escwa-data-factory"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureDatabricks1_accessToken": {
+			"value": ""
+		},
+		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+			"value": "0819-103546-oznd63v6"
+		},
+		"trigger1_properties_typeProperties_scope": {
+			"value": "/subscriptions/cedf16eb-771b-47c9-b218-5e08459b1a1d/resourceGroups/ESCWA/providers/Microsoft.Storage/storageAccounts/escwa"
+		},
+		"trigger2_properties_escwa_pipeline_parameters_sourceFolder": {
+			"value": "@substring(triggerBody().folderPath,add(indexof(triggerBody().folderPath,'/'),1),sub(length(triggerBody().folderPath),add(indexof(triggerBody().folderPath,'/'),1)))"
+		},
+		"trigger2_properties_escwa_pipeline_parameters_sourceFile": {
+			"value": "@triggerBody().fileName"
+		},
+		"trigger2_properties_typeProperties_scope": {
+			"value": "/subscriptions/cedf16eb-771b-47c9-b218-5e08459b1a1d/resourceGroups/ESCWA/providers/Microsoft.Storage/storageAccounts/escwa"
+		}
+	}
+}
